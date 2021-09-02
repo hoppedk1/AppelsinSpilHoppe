@@ -78,16 +78,16 @@ function draw() {
         display(); 
         regen();
         if (keyIsDown(UP_ARROW)) {
-            turban.moveY(-5);
+            turban.moveY(-8);
         }
         if (keyIsDown(DOWN_ARROW)) {
-            turban.moveY(5);
+            turban.moveY(8);
         }    
         if (keyIsDown(LEFT_ARROW)) {
-            turban.moveX(-5);
+            turban.moveX(-8);
         }
         if (keyIsDown(RIGHT_ARROW)) {
-            turban.moveX(5);
+            turban.moveX(8);
         } 
     }
     else {  // så er Game Over det der skal vises
