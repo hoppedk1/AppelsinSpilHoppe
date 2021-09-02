@@ -8,7 +8,7 @@ class Kurv {
      * ud fra dem. Værdierne huskes som hørende til netop 
      * dette objekt ved hjælp af nøgleordet this
      */
-    constructor(x, y, bredde, dybde, speed, bill) {
+    constructor(x, y, bredde, dybde, speed, bill) { // constructor til at bygge kurven.
         this.x = x;
         this.y = y;
         this.bred = bredde;
@@ -23,7 +23,7 @@ class Kurv {
     tegn = function() {
         fill(this.col);
         rect(this.x, this.y, this.bred, this.dyb);
-        image(bill, this.x, this.y, 150, 50);
+        image(bill, this.x, this.y, 150, 50); // billed af en onionhat og dens størrelse.
     }
 
     /* Flytter kurvens position

@@ -7,7 +7,7 @@
      * Parametrene til konstruktøren er
      * position (x og y), radius (r), fart (xs og ys) samt farve (c)
      */
-    constructor(x, y, r, xs, ys, c) {
+    constructor(x, y, r, xs, ys, c) { // constructor og de forskellige værdier som vil blive udfyldt i sketch.js
         this.x = x;
         this.y = y;
         this.r = r;
@@ -20,7 +20,7 @@
         console.log("Ny frugt er lavet, dens ventetid er "+this.tid);
     }  
 
-    display() {
+    display() { // selve bolden som flyver hvor der så bliver smidt et billed af en appelsin over.
         if (this.showing) {
             fill(this.col);
             ellipse(this.x, this.y, this.r*2, this.r*2);
@@ -65,7 +65,7 @@
     shootNew() {
         this.x = this.r;
         this.y = random(200, 550);
-        this.yspeed = -10 * (this.y/550); // dette er ikke godt. Hvad kan I huske om det skrå kast?
+        this.yspeed = random(-10,-7) * (this.y/550); // dette er ikke godt. Hvad kan I huske om det skrå kast?, har ændret yspeed fra at være en konstant -10 til at være random mellem -10 og -7
         this.xspeed = random(4);
         this.moving = false;
         this.showing = false;
@@ -73,7 +73,7 @@
     }
 
 
-    checkScore = function() {
+    checkScore = function() { // checker om den er blevet samlet op, og giver +1 i score
         if (this.yspeed > 0) {
             if (turban.grebet(this.x, this.y, this.r)) {
                 score += 1;
