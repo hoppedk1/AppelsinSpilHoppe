@@ -1,7 +1,3 @@
-/*
-Først laver vi nogle variable til at lave en appelsin:
- - en kugle som vi vil skyde afsted og fange i en turban
-*/
 
 // Appelsinen
 let img;
@@ -36,7 +32,7 @@ function preload() {
  * 
  */
 function setup() {  // kører kun en gang, når programmet startes
-    createCanvas(950, 700);
+    createCanvas(950, 700); // størrelse på canvas, er gjort lidt større for at g
 
     textAlign(CENTER, CENTER);
 
@@ -50,8 +46,8 @@ function setup() {  // kører kun en gang, når programmet startes
     x = rad;
     // parametrene til Kurv-konstruktøren er (x, y, bredde, dybde, speed, billed)
     turban = new Kurv(600, 100, 150, 50, 10, bill);
-    //  
-    frugt = new Frugt(10, 550, 10, 4, -10 [255, 150, 10], img)
+    // parametrene til frugt (x, y, radius, xspeed, yspeed, farve, img)
+    frugt = new Frugt(10, 550, 10, 4, -10 [255, 150, 10], img) // har beholdt den original frugt uden billed, da den skal bruges til at starte spillet, da der kommer en ny bold efter første hit.
     limefrugt = new Frugt(20, 550, 20, 4, -10, [110,220,0], img);
     limefrugt1 = new Frugt (20, 550, 20, 4, -10, [110,220,0], img);
     frugtliste.push(limefrugt);
@@ -71,14 +67,14 @@ function draw() {
         
         limefrugt1.move();
         limefrugt1.checkScore();
-        limefrugt1.display();
+        limefrugt1.display(); // tegner,bevæger og checkerscore med alt frugt
 
         move();
         checkScore();
         display(); 
         regen();
         if (keyIsDown(UP_ARROW)) {
-            turban.moveY(-8);
+            turban.moveY(-8); // har ændret værdien på alle sammen fra 5 til 8 så du rent faktisk kan nå at samle dem op og opnå en lidt højere score.
         }
         if (keyIsDown(DOWN_ARROW)) {
             turban.moveY(8);
@@ -93,9 +89,9 @@ function draw() {
     else {  // så er Game Over det der skal vises
         fill(col);
         textSize(46);
-        text("Game Over",width/2 + random(-500,500), height/2 + random(100)); // -5, 5 og 3
-        text("Score: "+score, width/2, height/2 + 50);
-        text("missed: "+missed,width/2, height/2 + 100);
+        text("Game Over",width/2 + random(-500,500), height/2 + random(100)); // original værdier = -5, 5 og 3
+        text("Score: "+score, width/2, height/2 + 50); 
+        text("missed: "+missed,width/2, height/2 + 100); // visning af mængden du har missed, hvilket betyder noget når man kan regen liv.
     
     }
 }
@@ -180,15 +176,6 @@ function restart() {
     genstartKnap.hide();
 }
 
-/*
-function shootOther(){
-    x1 = random(10);
-    y1 = 550;
-    yspeed1 = newspeed;
-    xspeed1 = random(10);
-    tid1 = random(10);
-}
-*/
 function keyPressed() {
     // Funktionen gør ingenting lige nu
     return false;  // Forebygger evt. browser default behaviour
