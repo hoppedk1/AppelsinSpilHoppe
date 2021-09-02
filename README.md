@@ -1,2 +1,4 @@
 # p5-appelsiner-i-turbanen
-Brush-up forløb af p5- og programmeringskompetencer ved starten af et nyt år med Digital Teknik
+MDA:
+Challenge
+Spillet er meget simplet med en ide af at prøve at fange de 3 bolde og holde sit liv oppe.
