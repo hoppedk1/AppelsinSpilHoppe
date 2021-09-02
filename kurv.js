@@ -45,7 +45,7 @@ class Kurv {
      * midtpunkts koordinater og boldens radius
      */
     grebet = function(xa, ya, ra) {
-        if ((ya < this.y+3 && ya > this.y-3) && xa > this.x+ra && xa < this.x+this.bred-ra) {
+        if ((ya < this.y+1 && ya > this.y-1) && xa > this.x+ra && xa < this.x+this.bred-ra) { // ændret til at være +1 og -1 så frugter ikke klipper igennem så tit. Selvom det bliver lidt nemmere.
             return true;
         }
         else {
