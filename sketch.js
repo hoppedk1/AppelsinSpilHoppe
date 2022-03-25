@@ -74,6 +74,7 @@ function draw() {
         display(); 
         regen();
         if (keyIsDown(UP_ARROW)) {
+            debugger
             turban.moveY(-8); // har ændret værdien på alle sammen fra 5 til 8 så du rent faktisk kan nå at samle dem op og opnå en lidt højere score.
         }
         if (keyIsDown(DOWN_ARROW)) {
